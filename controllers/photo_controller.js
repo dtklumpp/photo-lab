@@ -9,3 +9,6 @@ router.get('/', (req, res) => {
     res.send('here be photos index page');
 });
 
+router.get('/newPhoto', (req, res) => {
+    res.render('new.ejs');
+})
