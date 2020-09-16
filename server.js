@@ -11,6 +11,9 @@ app.use(express.static('public'));
 //const path = require('path');
 //app.use(express.static(path.join(__dirname, 'public')));
 
+const photoController = require('./controllers/photo_controller');
+app.use('/photos', photoController);
+
 app.listen(PORT, () => {
     console.log('now listening at port: '+PORT);
 });
