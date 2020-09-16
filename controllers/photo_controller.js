@@ -6,7 +6,11 @@ const db = require('../models/index.js');
 
 //index
 router.get('/', (req, res) => {
-    res.render('index.ejs');
+    db.PhotoMod.find({}, (err, dat) => {
+        if(err) return console.log('err:', err);
+        const context = {allPhotos: dat};
+        res.render('index.ejs', context);
+    })
 });
 
 //new route
