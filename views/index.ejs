@@ -11,6 +11,9 @@
         <% allPhotos.forEach(photo => { %>
             <li>
                 <%= photo.name %> 
+                <form action="/photos/<%=photo._id%>?_method=DELETE" method="post">
+                    <input type="submit" value="DESTROY">
+                </form>
             </li>
         <% }) %> 
     </ul>

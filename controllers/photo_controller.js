@@ -25,3 +25,16 @@ router.post('/', (req, res) => {
         res.redirect('/photos');
     })
 })
+
+//show route
+
+//edit route
+//update route
+
+//delete route
+router.delete('/:photoID', (req, res) => {
+    db.PhotoMod.findByIdAndDelete(req.params.photoID, (err, dat) => {
+        if(err) return console.log('err:', err);
+        res.redirect('/photos');
+    })
+})
